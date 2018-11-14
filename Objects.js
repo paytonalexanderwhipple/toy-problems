@@ -90,7 +90,7 @@ const person = {
   // BONUS HARD MODE
   let {favoriteThings: [happy, accidents]} = person
   accidents
-  let {greet()} = person
+  let {greet} = person
   greet()
   
   // redo all the above items but use nested destructuring to access the items.
