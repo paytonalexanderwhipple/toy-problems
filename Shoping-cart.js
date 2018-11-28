@@ -31,13 +31,19 @@
   ];
 
   class Shopping {
-      constructor(items) {
-          this.cart = items
+      constructor(items, taxRate) {
+          this.cart = items;
+          this.taxRate = taxRate;
+          this.total = 0;
       }
 
       removeById(id) {
-          this.cart = this.cart.filter((item) => item.id !== id)
+          this.cart = this.cart.filter((item) => item.id !== id);
       }
 
-      
+      calculateTotal(taxRate = this.taxRate) {
+        let total = (this.cart.reduce((acc, item) => acc + item.price, 0) * taxRate).toFixed(2)
+        console.log(total)
+        return total
+      }
   }
